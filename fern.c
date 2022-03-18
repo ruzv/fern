@@ -45,7 +45,6 @@ void plot(chr_img* img, int x, int y) {
     }
 
     img->img[(y * img->img_width) + x] += 1;
-
 }
 
 void print(chr_img* img) {
@@ -53,10 +52,10 @@ void print(chr_img* img) {
 
     for (int y=0; y<img->img_height; y++) {
         for (int x=0; x<img->img_width; x++) {
-            printf("%c", steps[img->img[(y*img->img_width) + x]]);
+            putc(steps[img->img[(y*img->img_width) + x]], stdout);
         }
 
-        printf("\n");
+        putc('\n', stdout);
     }
 }
 
@@ -97,6 +96,8 @@ int main(int argc, char const* argv[]) {
     }
 
     print(&img);
+
+    free(img.img);
 
     return 0;
 }
