@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Fern */
+
 const int char_width = 8;
 const int char_height = 16;
 
